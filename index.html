@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Greening Deserts</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href="css/styles.css" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&family=Barlow:wght@600&family=Merienda:wght@700&family=Oswald:wght@400;600&family=Tillana:wght@600&display=swap" rel="stylesheet">
+
+		<link rel="icon" type="image/png" href="images/flaticons/flaticon.png" sizes="32x32">
+	</head>
+	
+	<body>
+		<header class="header">
+			<div class="header__container container">
+				<a href="index.html" class="header__logo">
+					<span class="header__logo-img">
+						<img class="header__img" src="images/header/tree.png" alt="Logo">
+					</span>
+					<span class="header__link">GD</span>
+				</a>
+				<nav class="header__menu menu">
+					<ul class="menu__list">
+						<li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+						<li class="menu__item"><a class="menu__link" href="#">About Us</a></li>
+						<li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+						<li class="menu__item"><a class="menu__link" href="#">Join Us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main class="page">
+			<div class="page__screen screen">
+				<div class="screen__videos">
+					<!--Видео с параметром autoplay можно запустить только если стоит muted; иначе в Хроме не работает-->
+					<video class="screen__desert" autoplay loop muted>
+						<source src="videos/8-hours-desert-wind-sounds-blowing-across-sand-dunes-4k-nature-soundscapes.EkZb6.webm" 
+						type="video/webm">
+					</video>
+					<video class="screen__forest" loop muted preload="auto">
+						<source src="videos/Forest-2K-Nature-Relaxation-Film-Peaceful-Relaxing-Music-Meditation-Music-Nature-Sounds.webm" type="video/webm">
+					</video>
+				</div>
+				<div class="screen__title"></div>
+			</div>
+			<section class="page__content content">
+				<div class="content__block container">
+					<h1 class="content__title">GREENING DESERTS PROJECT</h1>
+					<div class="content__text">
+						Every year, the area of deserts increases by an average of 10,000 square kilometers. Small villages suffer from dust storms and droughts, some have already been swallowed up by deserts, and now there is no life there, only sand. Big cities are also under threat now. We are thousands of volunteers from different cities and countries united by a common idea to prevent the spread of deserts.
+					</div>
+					<a class="content__button" href="#">See more</a>					
+				</div>
+			</section>
+			<div class="page__content-2 content-2">
+				<div class="content-2__tree"></div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container container">
+				<ul class="footer__socials socials">
+					<li class="socials__item">
+						<a class="socials__link" href="#"><img class="socials__icon" src="images/footer/instagram.svg" alt="Instagram"></a>
+					</li>
+					
+					<li class="socials__item">
+						<a class="socials__link" href="#"><img class="socials__icon" src="images/footer/facebook.svg" alt="Facebook"></a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="#"><img class="socials__icon" src="images/footer/youtube.svg" alt="Youtube"></a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="#"><img class="socials__icon" src="images/footer/twitter.svg" alt="Twitter"></a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+	<script src="js/screen.js"></script>
+	</body>
+</html>

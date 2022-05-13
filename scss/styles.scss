@@ -1,0 +1,273 @@
+@import "nullstyle.scss";
+
+body{
+	background: #abe2d4;
+}
+
+.container{
+	width: 80%;
+	margin: 0 auto;
+}
+
+@mixin fonts($family, $size, $lineHeight, $weight){
+	font-family: $family;
+	font-size: $size;
+	line-height: $lineHeight;
+	font-weight: $weight;
+}
+
+/***SCREEN*************************/
+.screen{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	&__title{
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__letter{
+		font-size: 9vw;
+		font-weight: 400;
+		transform: translateY(60px);
+		opacity: 0;
+		transition: translateY, .42s ease, scale, .3s ease, opacity .5s ease;
+		@media screen and (max-width: 1023px){
+			font-size: 10vw;
+		}
+
+		@media screen and (max-width: 599px){
+			font-size: 12vw;
+		}
+	}
+
+	&__videos{
+		width: 100%;
+		min-height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	&__desert, &__forest{
+		width: 100%;
+		min-height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		transition: opacity 1.5s ease;
+		object-fit: cover;
+	}
+
+	&__forest{
+		display: none;
+		opacity: 0;
+	}	
+}
+
+/**HEADER*****************************/
+.header, .footer{
+	position: absolute;
+	z-index: 10;
+	width: 50%;
+	transition: all 1.3s ease;
+}
+
+.header{
+	top: -20%; //3vh
+	left: 0;
+
+	&__container{
+		display: flex;
+	}
+
+	&__logo{
+		display: flex;
+	}
+
+	&__logo-img{
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 3vw;
+		height: 3vw;
+		border: 0.25vw solid #fff;
+		border-radius: 50%;
+	}
+
+	&__img{
+		width: 80%;
+		filter: invert(100%);
+	}
+
+	&__link{
+		margin: 0 0 0 0.4vw;
+		@include fonts('Tillana', 2.5vw, 150%, 600);
+		color: #fff;
+	}
+}
+
+.menu{
+	display: flex;
+	align-items: center;
+	margin: 0 0 0 5vw;
+
+	&__list{
+		display: flex;
+		column-gap: 2.3vw;
+	}
+
+	&__link{
+		@include fonts('Barlow Condensed', 1.8vw, 150%, 400);
+		color: #fff;
+		position: relative;
+		padding: 0 3px;
+	}
+
+	&__link:after{
+		content: '';
+		width: 0;
+		height: 0.3vh;
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		background: #fff;
+		transform-origin: left;
+		transition: all 0.25s ease;
+	}
+
+	&__link:hover:after{
+		width: 100%;
+	}
+}
+
+/**MAIN*******************************/
+.page{
+	display: flex;
+	overflow: hidden;
+}
+
+.content{
+	width: 50%;
+	min-height: 100vh;
+	/*backdrop-filter позволяет применить эффекты к области позади элемента; здесь: часть видео позади блока с текстом будет
+	размыта*/
+	//backdrop-filter: blur(5px);
+	background: linear-gradient(90deg, rgba(41, 178, 203, 0.5) 50%, transparent);
+	color: #fff;
+	position: relative;
+	left: -50%;
+	transition: all 3s ease;
+
+	&__block{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+	}
+
+	&__title{
+		@include fonts('Barlow Condensed', 6vw, 100%, 600);
+		margin: 7vh 0 0 0;
+	}
+
+	&__text{
+		margin: 2.2vh 0 0 0;
+		text-indent: 1.3vw;
+		@include fonts('Barlow Condensed', 1.4vw, 150%, 400);
+	}
+
+	&__button{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		align-self: flex-start;
+		min-width: 11vw;
+		height: 4vw;
+		border: 0.4vw solid #fff;
+		box-sizing: border-box;
+		margin: 6vh 0 0 0;
+		transition: all 0.25s ease;
+		color: #fff;
+		border-radius: 1.5vw;
+		@include fonts('Oswald', 1.4vw, 100%, 600);
+	}
+
+	&__button:hover{
+		background: #fff;
+		color: #000;
+		mix-blend-mode: screen;
+	}
+
+	&__button:after{
+		content: '\2192'; 
+		padding: 0 0 0.6vh 1.3vw;
+	}
+}
+
+.content-2{
+	width: 50%;
+	min-height: 100vh;
+	position: relative;
+	right: -50%;
+	background: linear-gradient(-90deg, rgba(15, 153, 52, 0.8) 50%, transparent);
+	mix-blend-mode: overlay;
+	transition: all 3s ease;
+
+	&__tree{
+		width: 102%;
+		min-height: 100vh;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		background: url(../images/main/tree.webp) 13vw 8vh/cover no-repeat;
+	}
+}
+
+/***FOOTER********************/
+.footer{
+	top: -20%; //4.2vh
+	right: 0;
+
+	&__container{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.socials{
+	display: inline-flex;
+	gap: 1vw;
+
+	&__link{
+		line-height: 0;
+	}
+
+	&__item{
+		display: flex;
+		align-items: center;
+		text-align: center;
+		width: 3.4vw;
+		height: 3.4vw;
+		border-radius: 100px;
+		transition: all 0.25s ease;
+	}
+
+	&__icon{
+		filter: invert(100%);
+		width: 70%;
+	}
+
+	&__item:hover{
+		background: rgba(255, 255, 255, 0.3);
+	}
+}
