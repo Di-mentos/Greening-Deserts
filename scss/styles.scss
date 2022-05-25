@@ -160,7 +160,7 @@ body{
 	min-height: 100vh;
 	/*backdrop-filter позволяет применить эффекты к области позади элемента; здесь: часть видео позади блока с текстом будет
 	размыта*/
-	//backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 	background: linear-gradient(90deg, rgba(41, 178, 203, 0.5) 50%, transparent);
 	color: #fff;
 	position: relative;
